@@ -1,0 +1,12 @@
+- name: restart kubectl-master-config
+  systemd:
+    name: "{{ item }}"
+    state: restarted
+    daemon_reload: yes
+    enabled: true
+  with_items:
+    - 'etcd'
+    - 'kube-apiserver'
+    - 'kube-controller-manager'
+    - 'kube-scheduler'
+  

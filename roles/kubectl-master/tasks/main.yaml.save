@@ -1,0 +1,24 @@
+- name: check in /etc/kubernetes/config
+  copy:
+    src: config
+    dest: /etc/kubernetes/config
+    owner: root
+    group: root
+    mode: 0644
+
+- name: check in /etc/etcd/etcd.conf
+  copy:
+    src: etcd.conf
+    dest: /etc/etcd/etcd.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: check in /etc/etcd/etcd.conf
+  copy:
+    src: etcd.conf
+    dest: /etc/etcd/etcd.conf
+    owner: root
+    group: root
+    mode: 0644
+

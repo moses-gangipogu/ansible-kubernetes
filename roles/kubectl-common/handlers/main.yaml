@@ -1,0 +1,8 @@
+- name: restart ntp
+  service:
+    name: ntp
+    state: restarted
+
+- name: yum update
+  yum: name=* state=latest
+

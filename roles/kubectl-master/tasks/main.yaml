@@ -1,0 +1,33 @@
+- name: check in /etc/kubernetes/config
+  copy:
+    src: config
+    dest: /etc/kubernetes/config
+    owner: root
+    group: root
+    mode: 0644
+
+- name: check in /etc/etcd/etcd.conf
+  copy:
+    src: etcd.conf
+    dest: /etc/etcd/etcd.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: check in /etc/kubernetes/apiserver 
+  copy:
+    src: apiserver
+    dest: /etc/kubernetes/apiserver
+    owner: root
+    group: root
+    mode: 0644
+
+- name: check in /etc/sysconfig/flanneld 
+  copy:
+    src: flanneld
+    dest: /etc/sysconfig/flanneld 
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart kubectl-master-config

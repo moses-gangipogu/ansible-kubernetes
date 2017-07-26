@@ -1,0 +1,9 @@
+- hosts: kubectl-master
+  remote_user: root
+  become: yes
+  become_method: sudo 
+  gather_facts: yes
+  
+  roles:
+    - kubectl-common
+    - kubectl-master
